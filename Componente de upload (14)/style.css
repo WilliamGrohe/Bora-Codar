@@ -108,5 +108,34 @@ hr {
 
   color: #475569;
   font-size: 1rem;
+}
 
+/* Card escuro central */
+.dark {
+  background-color: #0F172A;
+}
+
+.dark h3 {
+  color: #996DFF;
+}
+
+.dark h1, h2 {
+  color: #F8FAFC;
+}
+
+.dark button {
+  background-color: #996DFF;
+  color: #FFF;
+}
+
+.dark button:hover {
+  background-color: #7C3AED;
+}
+
+.dark hr {
+  border-color: #334155;
+}
+
+.dark .line {
+  color: #CBD5E1;
 }
