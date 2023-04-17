@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FBFAFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.87rem;  /* 14px */
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+
+  height: 10rem;
+  width: 28rem;
+  background-color: #F3F0FF;
+  border: 1px dashed #C1B2FA;
+  border-radius: 0.5rem;
+}
+
+.title {
+  color: #7A5FEC;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+p {
+  background-color: transparent;
+}
+
