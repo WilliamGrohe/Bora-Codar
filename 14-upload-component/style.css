@@ -140,3 +140,18 @@ progress::-webkit-progress-value {
   color: #794fed;
   cursor: pointer;
 }
+
+/* Colors */
+.uploading {
+  --progress-color: linear-gradient(90deg, rgba(58, 97, 237, 0.52) 0%, #7C3AED 100%);
+  --progress-text: #9892A6;
+}
+
+.done {
+  --progress-color: #73B172;
+  --progress-text: #4E884D;
+}
+
+.error {
+  --progress-text: #E36363;
+}
