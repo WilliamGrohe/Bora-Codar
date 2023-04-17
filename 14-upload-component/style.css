@@ -48,3 +48,7 @@ html, body {
 .upload p {
   color: #746E82;
 }
+
+.upload.upload-over {
+  background: #EBE6FF;
+}
