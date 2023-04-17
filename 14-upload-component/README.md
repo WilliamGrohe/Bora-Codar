@@ -18,9 +18,9 @@ Este é o projeto de um componente de upload proposto no desafio 14 do [#boraCod
 
 Próximas features:
 
+- [X] Adicionar animações
 - [ ] Função para adicionar novos arquivos com suas respectivas informações
 - [ ] Remoção de arquivos
-- [ ] Adicionar animações
 - [ ] Exibição do progresso de carregamento dos arquivos
 - [ ] Arquivos podem ser arrastados
 - [ ] Efeitos hover e animações

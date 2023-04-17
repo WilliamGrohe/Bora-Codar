@@ -42,6 +42,10 @@ body {
   position: absolute;
 }
 
+.upload img {
+  animation: up-and-down .4s infinite alternate;
+}
+
 .upload h3 {
   margin-top: 0.75rem;
   color: #7a5fec;
@@ -53,7 +57,7 @@ body {
   color: #746e82;
 }
 
-.upload.upload-over {
+.upload.upload-over, .upload:hover {
   background: #ebe6ff;
 }
 
@@ -79,6 +83,17 @@ body {
 
   --progress-color: black;
   --progress-text: #999;
+
+  transition: all .3s ease-in-out;
+}
+
+.box-deleted {
+  animation: leave .5s forwards;
+}
+
+.box:hover {
+  scale: 1.05;
+  box-shadow: none;
 }
 
 /* Info */
@@ -154,4 +169,24 @@ progress::-webkit-progress-value {
 
 .error {
   --progress-text: #E36363;
+}
+
+@keyframes up-and-down {
+  from {
+      transform: translateY(1rem);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+@keyframes leave {
+  from {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateX(2rem);
+  }
 }
