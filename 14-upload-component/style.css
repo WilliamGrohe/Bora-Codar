@@ -4,30 +4,34 @@
   box-sizing: border-box;
 }
 
-html, body {
-  background-color: #FBFAFF;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.87rem;  /* 14px */
+html,
+body {
+  background-color: #fbfaff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.87rem; /* 14px */
   line-height: 130%;
 }
 
 .container {
+  min-height: 100vh;
   display: flex;
-  height: 100vh;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+
+  max-width: 28rem;
+  width: 90%;
+  margin: auto;
 }
 
 .upload {
   text-align: center;
 
   height: 10rem;
-  width: 28rem;
   padding: 1.75rem 0 2rem;
   position: relative;
 
-  background-color: #F3F0FF;
-  border: 1px dashed #C1B2FA;
+  background-color: #f3f0ff;
+  border: 1px dashed #c1b2fa;
   border-radius: 0.5rem;
 }
 
@@ -40,15 +44,99 @@ html, body {
 
 .upload h3 {
   margin-top: 0.75rem;
-  color: #7A5FEC;
+  color: #7a5fec;
   font-weight: 700;
   font-size: 1rem;
 }
 
 .upload p {
-  color: #746E82;
+  color: #746e82;
 }
 
 .upload.upload-over {
-  background: #EBE6FF;
+  background: #ebe6ff;
+}
+
+.files {
+  display: grid;
+  gap: 0.5rem;
+
+  margin-top: 1.3rem;
+}
+
+/* Box */
+.box {
+  display: flex;
+
+  padding: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 4px 16px #eae2fd;
+  border-radius: 8px;
+
+  gap: 0.75rem;
+
+  position: relative;
+
+  --progress-color: black;
+  --progress-text: #999;
+}
+
+/* Info */
+.box .info {
+  flex: 1;
+}
+
+.info .filename {
+  font-weight: 700;
+  color: #575361;
+}
+
+.info .filesize {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #857e95;
+}
+
+/* bar progress */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  line-height: 0;
+  margin-top: 4px;
+}
+
+progress {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e3e3ed;
+}
+
+progress::-webkit-progress-value {
+  background: var(--progress-color);
+}
+
+.bar span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--progress-text);
+}
+
+/* Action */
+.action {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  color: #794fed;
+  cursor: pointer;
 }

@@ -15,14 +15,38 @@
   </head>
   <body>
     <div id="App" class="container">
-      <div class="upload">
+      <section class="upload">
         <img src="Assets/upload.svg" style="height: 3rem" alt="Upload Icon" />
         <h3 class="title">Importe seus arquivos</h3>
         <p>Arraste ou clique para fazer upload</p>
 
         <input type="file">
-      </div>
-      <div class="files"></div>
+      </section>
+
+      <section class="files">
+        <div class="box uploading">
+          <div class="icon">
+            <img src="Assets/file-uploading.svg" alt="File Icon">
+          </div>
+          <div class="info">
+            <div class="filename">Scann_158.pdf</div>
+            <div class="filesize">
+              <span>30 MB /</span>
+              <span>70 MB</span>
+            </div>
+            <div class="bar">
+              <progress value="45" max="100"></progress>
+              <span>46%</span>
+            </div>
+          </div>
+          <div class="action">
+            <img src="assets/Cancel.svg" alt="Cancel Icon">
+          </div>
+        </div>
+
+        <div class="box done"></div>
+        <div class="box error"></div>
+      </section>
     </div>
 
     <script src="myscript.js"></script>
