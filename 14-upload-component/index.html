@@ -20,7 +20,7 @@
         <h3 class="title">Importe seus arquivos</h3>
         <p>Arraste ou clique para fazer upload</p>
 
-        <input type="file">
+        <input type="file" name="file" id="file-input">
       </section>
 
       <section class="files">
@@ -31,12 +31,12 @@
           <div class="info">
             <div class="filename">Scann_158.pdf</div>
             <div class="filesize">
-              <span>30 MB /</span>
-              <span>70 MB</span>
+              <span class="loaded">30 MB /</span>
+              <span class="totalSize">70 MB</span>
             </div>
             <div class="bar">
               <progress value="45" max="100"></progress>
-              <span>46%</span>
+              <span class="loadingPorcentage">46%</span>
             </div>
           </div>
           <div class="action">
@@ -75,7 +75,7 @@
             </div>
           </div>
           <div class="action">
-            <img src="Assets/refresh.svg" style="height: .75rem;" alt="Refresh Icon">
+            <img src="Assets/refresh.svg" alt="Refresh Icon">
           </div>
         </div>
       </section>
