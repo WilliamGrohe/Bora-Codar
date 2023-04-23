@@ -1,5 +1,5 @@
 const dropArea = document.querySelector(".upload");
-const box = document.querySelector(".box");
+const filesSection = document.querySelector('.files')
 const fileInput = document.querySelector("#file-input");
 const filesContainer = document.querySelector('.files')
 
@@ -16,7 +16,7 @@ function createNewBoxOnFiles() {
 
   newBox.innerHTML = `
   <div class="icon">
-            <img src="Assets/file-uploading.svg" alt="File Icon">
+            <img src="Assets/file-uploading.svg" class="fileIcon" alt="File Icon">
           </div>
           <div class="info">
             <div class="filename">${fileName}</div>
@@ -25,7 +25,7 @@ function createNewBoxOnFiles() {
               <span class="totalSize">${fileSize}MB</span>
             </div>
             <div class="bar">
-              <progress value="45" max="100"></progress>
+              <progress value="100" max="100"></progress>
               <span class="loadingPorcentage">46%</span>
             </div>
           </div>
@@ -34,7 +34,53 @@ function createNewBoxOnFiles() {
           </div>
   `;
 
-  filesContainer.appendChild(newBox)
+  showProgress(newBox, file.size)
+}
+
+function showProgress(newBox, size){
+  const loadedSpan = newBox.querySelector('.loaded')
+  const progressBar = newBox.querySelector('.bar')
+  const porcentageSpan = newBox.querySelector('.loadingPorcentage')
+  const fileIcon = newBox.querySelector('.fileIcon')
+
+  let loaded = 0
+  let porcentage = 0
+  let total = size
+
+  const intervalTime = 100 // tempo entre cada execução do setInterval
+  const totalTime = 5000 // tempo total para carregar
+
+  const loadedIncrement = total * intervalTime / totalTime
+  const porcentageIncrement = 100 * intervalTime / totalTime
+
+  const updateValues = setInterval(() => {
+    loaded += loadedIncrement
+    porcentage += porcentageIncrement
+
+    progressBar.classList.add('uploading')
+    porcentageSpan.classList.add('uploading')
+
+    if (loaded >= total && porcentage >= 100) {
+      porcentage = 100
+      loaded = total
+      fileIcon.src = 'Assets/file-done.svg'
+      progressBar.classList.add('done')
+      progressBar.classList.remove('uploading')
+      porcentageSpan.classList.add('done')
+      porcentageSpan.classList.remove('uploading')
+
+      clearInterval(updateValues)
+    }
+
+    loadedSpan.textContent = `${(loaded / (1024 * 1024)).toFixed(2)}MB / `
+    progressBar.style.width = `${porcentage}%`
+    porcentageSpan.textContent = `${Math.round(porcentage)}%`
+
+  }, intervalTime)
+
+filesContainer.appendChild(newBox)
+return newBox
+
 }
 
 dropArea.addEventListener("dragover", () => {
@@ -45,8 +91,7 @@ dropArea.addEventListener("dragleave", () => {
   dropArea.classList.remove("upload-over");
 });
 
-box.addEventListener("click", removeBox);
-
+filesSection.addEventListener("click", removeBox);
 
 function removeBox(event) {
   if (event.target.classList.contains("removeBoxBtn")) {

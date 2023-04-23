@@ -146,6 +146,11 @@ progress::-webkit-progress-value {
   color: var(--progress-text);
 }
 
+.loadingPorcentage {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Action */
 .action {
   position: absolute;
